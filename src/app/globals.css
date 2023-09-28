@@ -42,6 +42,12 @@
   }
 }
 
+@media screen and (max-width: 450px) {
+  .appbar {
+    @apply text-3xl;
+  }
+}
+
 /* Scrollbar */
 @layer utilities {
   /* width */

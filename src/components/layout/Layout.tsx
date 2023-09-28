@@ -5,7 +5,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <AppBar />
-      <div className="bg-neutral-100">{children}</div>
+      <div className="bg-neutral-100 w-auto">{children}</div>
     </>
   );
 };
