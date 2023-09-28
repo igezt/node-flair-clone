@@ -17,7 +17,7 @@ export const JobInformation = (props: JobInformationProps) => {
   return (
     <div
       about="Contains Job information"
-      className="jobInformation hidden px-1.5 sticky w-[509px] top-[102px] rounded-lg bg-white shadow-xl h-[85vh]"
+      className="jobInformation hidden px-1.5 sticky w-[509px] top-[70px] rounded-lg bg-white shadow-xl h-[85vh]"
     >
       <div
         about="Contains scrolling container"
