@@ -1,4 +1,5 @@
 import { convertMillisecondsToHighestOrder } from "@/util/convertMilliseconds";
+import { sgdFormatter } from "@/util/salaryConverter";
 import Image from "next/image";
 
 export interface JobCardProps {
@@ -25,7 +26,9 @@ export const JobCard = (props: JobCardProps) => {
     new Date().valueOf() - props.timePosted.valueOf()
   );
 
-  const salary = `S$${props.lowerBoundPay} - S$${props.upperBoundPay} / mth `;
+  const salary = `${sgdFormatter.format(
+    props.lowerBoundPay
+  )} - ${sgdFormatter.format(props.upperBoundPay)} / mth `;
 
   const handleOnClick = () => {
     props.handleSelectJob(props.id);
@@ -34,7 +37,7 @@ export const JobCard = (props: JobCardProps) => {
   return (
     <div onClick={handleOnClick}>
       <div
-        className={`jobcard mx-5 p-5 mb-5 curve rounded-lg bg-white relative cursor-pointer h-full border-2 min-w-[427px] text-base ${
+        className={`jobcard mx-5 p-5 mb-5 curve rounded-lg bg-white relative cursor-pointer h-full border-2 min-w-[427px] text-base shadow-sm duration-200 select-none hover:shadow-lg hover:-translate-y-[3px] ${
           props.selectedJob == props.id ? "border-green-500" : ""
         }`}
       >
@@ -63,7 +66,7 @@ export const JobCard = (props: JobCardProps) => {
           </div>
           <div
             about="Contains information about the company"
-            className="basis-auto mt-0 flex-shrink block text-left text-ellipsis"
+            className="basis-auto mt-0 flex-shrink block text-left text-ellipsis w-full"
           >
             <p
               about="Company name and rating"
@@ -88,6 +91,7 @@ export const JobCard = (props: JobCardProps) => {
           >
             <span className="text-green-500 font-bold inherit">{recency}</span>
             <Image
+              about="Map pin svg"
               alt="map pin"
               src={"/map-pin.svg"}
               height={10.5}

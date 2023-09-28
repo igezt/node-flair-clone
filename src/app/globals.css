@@ -2,60 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
-
-/* @media screen {
-  :root {
-    background-color: #f3f2ef;
-    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
-    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
-    --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
-    --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
-    --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
-    --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
-    --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
-    --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
-    --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
-  }
-} */
-
-.jobcard {
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
-  transition: 0.2s;
-  container-type: inline-size;
-}
-
-.jobcard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25), 0 3px 12px rgba(0, 0, 0, 0.1);
-}
-
+/* Move job description, time posted and country down below the avatar*/
 @media screen and (max-width: 450px) {
   .jobcard {
-    box-shadow: none !important;
-    border-radius: 0;
+    @apply shadow-none;
+    @apply rounded-none;
   }
   .jobcard_top {
     @apply flex-wrap;
@@ -63,9 +14,11 @@ body {
   .jobcard_jobDescription {
     @apply basis-full;
     @apply mt-1.5;
+    @apply w-full;
   }
 }
 
+/* Move job description, time posted and country down to beside the avatar*/
 @media screen and (min-width: 450px) {
   .jobcard_top {
     @apply flex-nowrap;
@@ -74,31 +27,22 @@ body {
     @apply order-3;
   }
   .jobcard_jobDescription {
-    @apply basis-auto;
+    @apply basis-auto !important;
     @apply mt-0;
   }
   .jobcard_middle {
     @apply pl-14;
   }
-  /* .jobcard_bottom {
-    @apply px-4;
-  } */
 }
 
+/* Display job information */
 @media screen and (min-width: 1010px) {
   .jobInformation {
     display: block !important;
   }
 }
 
-.jobInformation {
-  position: -webkit-sticky;
-}
-
-.jobInformationScrollContainer {
-  /* max-height: calc(100vh - 106px); */
-}
-
+/* Scrollbar */
 @layer utilities {
   /* width */
   ::-webkit-scrollbar {
@@ -119,5 +63,155 @@ body {
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
+  }
+}
+
+.jobcard {
+  container-type: inline-size;
+}
+
+.jobInformation {
+  position: -webkit-sticky;
+}
+
+.loader {
+  width: 60px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  --base-color: #263238; /*use your base color*/
+}
+.loader::before {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #fff;
+  background-image: radial-gradient(
+      circle 8px at 18px 18px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 18px 0px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 0px 18px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 36px 18px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 18px 36px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 30px 5px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 30px 5px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 30px 30px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 5px 30px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 5px 5px,
+      var(--base-color) 100%,
+      transparent 0
+    );
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 3s linear infinite;
+}
+.loader::after {
+  content: "";
+  left: 35px;
+  top: 15px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  background-image: radial-gradient(
+      circle 5px at 12px 12px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 12px 0px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 0px 12px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 24px 12px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 12px 24px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 20px 3px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 20px 3px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 20px 20px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 3px 20px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 3px 3px,
+      var(--base-color) 100%,
+      transparent 0
+    );
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 4s linear infinite reverse;
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }

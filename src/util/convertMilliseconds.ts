@@ -10,8 +10,13 @@ export function convertMillisecondsToHighestOrder(ms: number): string {
   } else if (ms < 86400000) {
     let hours = Math.floor(ms / 3600000);
     return `about ${hours} hours ago`;
-  } else {
+  } else if (ms < 86400000 * 30) {
     let days = Math.floor(ms / 86400000);
     return `about ${days} days ago`;
+  } else if (ms < 86400000 * 30 * 12) {
+    let months = Math.floor(ms / (86400000 * 30));
+    return `about ${months} months ago`;
+  } else {
+    return "more than a year ago";
   }
 }
