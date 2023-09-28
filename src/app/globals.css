@@ -4,10 +4,6 @@
 
 /* Move job description, time posted and country down below the avatar*/
 @media screen and (max-width: 450px) {
-  .jobcard {
-    @apply shadow-none;
-    @apply rounded-none;
-  }
   .jobcard_top {
     @apply flex-wrap;
   }
@@ -35,16 +31,23 @@
   }
 }
 
+/* Remove drop shadow, rounded edges and margin. Also reduce font size of appbar*/
+@media screen and (max-width: 425px) {
+  .jobcard {
+    @apply shadow-none;
+    @apply rounded-none;
+    @apply mx-2;
+    @apply my-3;
+  }
+  .appbar {
+    @apply text-3xl;
+  }
+}
+
 /* Display job information */
 @media screen and (min-width: 1010px) {
   .jobInformation {
     display: block !important;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .appbar {
-    @apply text-3xl;
   }
 }
 

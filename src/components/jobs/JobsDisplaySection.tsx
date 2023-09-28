@@ -15,20 +15,18 @@ export const JobsDisplaySection = () => {
   };
 
   return (
-    <div className="bg-neutral-100">
-      <div className="flex items-start py-5 max-w-5xl ml-auto mr-auto">
-        <div className="pr-15 pl-15 w-full">
-          {jobs.map((job, i) => (
-            <JobCard
-              key={i}
-              {...job}
-              selectedJob={selected}
-              handleSelectJob={handleSelectJob}
-            />
-          ))}
-        </div>
-        <JobInformation selectedJob={selected} jobs={jobs} />
+    <div className="flex items-start py-5 max-w-5xl ml-auto mr-auto">
+      <div className="jobcardContainer w-full min-w-[370px]">
+        {jobs.map((job, i) => (
+          <JobCard
+            key={i}
+            {...job}
+            selectedJob={selected}
+            handleSelectJob={handleSelectJob}
+          />
+        ))}
       </div>
+      <JobInformation selectedJob={selected} jobs={jobs} />
     </div>
   );
 };
