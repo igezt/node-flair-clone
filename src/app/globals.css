@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+/* @media screen {
+  :root {
+    background-color: #f3f2ef;
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+    --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+    --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+    --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+    --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+    --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+    --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+    --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+  }
+} */
+
+.jobcard {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+  transition: 0.2s;
+  container-type: inline-size;
+}
+
+.jobcard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25), 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 450px) {
+  .jobcard {
+    box-shadow: none !important;
+    border-radius: 0;
+  }
+  .jobcard_top {
+    @apply flex-wrap;
+  }
+  .jobcard_jobDescription {
+    @apply basis-full;
+    @apply mt-1.5;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .jobcard_top {
+    @apply flex-nowrap;
+  }
+  .jobcard_shortenedJobTitle {
+    @apply order-3;
+  }
+  .jobcard_jobDescription {
+    @apply basis-auto;
+    @apply mt-0;
+  }
+  .jobcard_middle {
+    @apply pl-14;
+  }
+  /* .jobcard_bottom {
+    @apply px-4;
+  } */
+}
+
+@media screen and (min-width: 1010px) {
+  .jobInformation {
+    display: block !important;
+  }
+}
+
+.jobInformation {
+  position: -webkit-sticky;
+}
+
+.jobInformationScrollContainer {
+  /* max-height: calc(100vh - 106px); */
+}
+
+@layer utilities {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
