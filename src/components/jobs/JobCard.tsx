@@ -60,7 +60,7 @@ export const JobCard = (props: JobCardProps) => {
           about="Contains the shortened version of the job title"
           className="jobcard_shortenedJobTitle ml-auto pl-2.5"
         >
-          <div className="bg-green-100 text-green-500 px-2 py-1.5 rounded-md font-semibold">
+          <div className="bg-green-100 text-green-500 px-2 py-1.5 rounded-md font-semibold whitespace-nowrap">
             {props.shortenedJobTitle}
           </div>
         </div>
