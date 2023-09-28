@@ -1,3 +1,4 @@
+// Placeholder string
 export const lorem =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus eget\
         nibh quis malesuada. Quisque tristique mauris et est aliquet, et\

@@ -16,7 +16,10 @@ export const JobsDisplaySection = () => {
 
   return (
     <div className="flex items-start py-5 max-w-5xl ml-auto mr-auto">
-      <div className="jobcardContainer w-full min-w-[370px]">
+      <div
+        about="Contains all the jobCards"
+        className="jobcardContainer w-full min-w-[370px]"
+      >
         {jobs.map((job, i) => (
           <JobCard
             key={i}

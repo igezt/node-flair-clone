@@ -1,5 +1,6 @@
 import { Job } from "@/types/Job";
 
+// Mock jobs.
 export const mockJobs: Job[] = [
   {
     id: 0,

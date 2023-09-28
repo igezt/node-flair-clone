@@ -1,3 +1,4 @@
+// Converts milliseconds to the highest order of time.
 export function convertMillisecondsToHighestOrder(ms: number): string {
   if (ms < 1000) {
     return "Less than 1 second ago";

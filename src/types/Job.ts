@@ -1,6 +1,5 @@
 export interface Job {
   id: number;
-
   company: string;
   companyIcon: string;
   companyIconAlt: string;
