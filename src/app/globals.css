@@ -39,6 +39,11 @@
   }
   .appbar {
     @apply text-3xl;
+    @apply h-[4vh];
+  }
+
+  .jobcardsContainer {
+    @apply mt-3;
   }
 }
 
@@ -61,7 +66,8 @@
 @layer utilities {
   /* width */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
+    overflow: overlay;
   }
 
   /* Track */

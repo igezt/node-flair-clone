@@ -36,7 +36,7 @@ export const JobCard = (props: JobCardProps) => {
 
   return (
     <div
-      className={`jobcard mx-5 p-5 mb-5 curve rounded-lg min-w bg-white relative cursor-pointer h-full border-2 text-base shadow-sm duration-200 select-none hover:shadow-lg hover:-translate-y-[3px] ${
+      className={`jobcard mx-5 p-5 mb-5 curve rounded-lg bg-white relative cursor-pointer h-full border-2 text-base shadow-sm duration-200 select-none hover:shadow-lg hover:-translate-y-[3px] ${
         props.selectedJob == props.id ? "border-green-500" : ""
       }`}
       onClick={handleOnClick}
