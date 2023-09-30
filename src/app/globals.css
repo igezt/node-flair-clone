@@ -31,16 +31,22 @@
   }
 }
 
-/* Remove drop shadow, rounded edges and margin. Also reduce font size of appbar*/
+/* Remove and margin. Also reduce font size of appbar*/
 @media screen and (max-width: 425px) {
   .jobcard {
-    @apply shadow-none;
-    @apply rounded-none;
     @apply mx-2;
     @apply my-3;
   }
   .appbar {
     @apply text-3xl;
+  }
+}
+
+/* Remove drop shadow, rounded edges */
+@media screen and (max-width: 350px) {
+  .jobcard {
+    @apply shadow-none;
+    @apply rounded-none;
   }
 }
 
